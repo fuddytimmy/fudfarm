@@ -126,8 +126,8 @@ describe("FudFarmGenesis Test presale mint over max amount", function () {
         await fudFarmGenesis.connect(accounts[1]).presaleMint(1, ONE_FUDDER_CROP_AMOUNT); 
         expect(await fudFarmGenesis.total()).to.equal(1);
 
-        // This should never happen. We also need to add requestedmint amount to wallet amount 
-        // to determine if transaction should go through 
+        // This should never happen. We need to add requested mint amount to wallet amount 
+        // to determine if max has been met and transaction should go through 
         await giveMeCropAndApproveSpend(THREE_FUDDER_CROP_AMOUNT);
         await fudFarmGenesis.connect(accounts[1]).presaleMint(3, THREE_FUDDER_CROP_AMOUNT); 
         expect(await fudFarmGenesis.total()).to.equal(4);
@@ -202,6 +202,7 @@ async function giveMePresale() {
 
 async function giveMeFudFarm() {
 
+    // Mint a fud farm for fud farm held requirement
     await fudFarm.setStart(true);
     await fudFarm.connect(accounts[1]).mint(1, { value: ethers.utils.parseEther("0.03")});
 }
