@@ -98,7 +98,7 @@ contract FudFarmGenesis is ERC721Enumerable, Ownable {
         require(_cropAmount >= _times * cropPrice, "value error, please check price");
         require(presaleWhitelist[msg.sender], "must be on presale whitelist"); 
         require(_times <= presaleMaxWallet, "cannot mint more than 3");
-         //uint256 allowance = IERC20(cropAddress).allowance(msg.sender, address(this));
+        //uint256 allowance = IERC20(cropAddress).allowance(msg.sender, address(this));
         //console.log("crop allowance:", allowance);
         require(IERC721(contractAddress).balanceOf(msg.sender) <= presaleMaxWallet, "cannot have more than 3");
         cropAddress.transferFrom(msg.sender, address(this), _cropAmount);
@@ -113,8 +113,8 @@ contract FudFarmGenesis is ERC721Enumerable, Ownable {
         require(total + _times <= totalCrop, "Exceed crop allocation");
         require(_cropAmount >= _times * cropPrice, "value error, please check price");
         uint256 depositBalance = IStaking(stakeAddress).depositsOf(msg.sender).length;
-        console.log("farms staked by sender:", depositBalance);
-        console.log("farms in sender wallet:", fudFarmAddress.balanceOf(msg.sender));
+        //console.log("farms staked by sender:", depositBalance);
+        //console.log("farms in sender wallet:", fudFarmAddress.balanceOf(msg.sender));
         require(fudFarmAddress.balanceOf(msg.sender) > 0 || depositBalance > 0, "must hold at least 1 fudFarm");
         require(_times <= publicMaxWallet, "cannot mint more than 3");
         require(IERC721(contractAddress).balanceOf(msg.sender) <= publicMaxWallet, "cannot have more than 3");

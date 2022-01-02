@@ -1356,8 +1356,8 @@
       ]
     },
     "/Users/tcelikel/Development/fudfarm/contracts/FudFarmGenesis.sol": {
-      "lastModificationDate": 1640974090834,
-      "contentHash": "c44475732c40d3911c992dbaa8b5c858",
+      "lastModificationDate": 1641144501870,
+      "contentHash": "6a5a0d8d848857e9186ad3abb8e2e158",
       "sourceName": "contracts/FudFarmGenesis.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -1431,6 +1431,90 @@
       ],
       "artifacts": [
         "IStaking"
+      ]
+    },
+    "/Users/tcelikel/Development/fudfarm/node_modules/@openzeppelin/contracts/security/Pausable.sol": {
+      "lastModificationDate": 1640567075549,
+      "contentHash": "9c2dccab8e3a43a18c41e358763fe4d8",
+      "sourceName": "@openzeppelin/contracts/security/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/Users/tcelikel/Development/fudfarm/contracts/FudFarmsStaking.sol": {
+      "lastModificationDate": 1640980246625,
+      "contentHash": "8dd0521ca77dc6d7ccbe18869674ab1a",
+      "sourceName": "contracts/FudFarmsStaking.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/math/SafeMath.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "@openzeppelin/contracts/utils/structs/EnumerableSet.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/security/Pausable.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "FudFarmsStaking",
+        "ICropToken"
       ]
     }
   }
